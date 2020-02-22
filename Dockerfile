@@ -1,7 +1,9 @@
 FROM node:8.15.0
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/smart-brain-api
 
-COPY ./ ./smart-brain-api
+COPY ./ ./
 
-CMD ["bin/bash"]
+RUN npm install
+
+CMD ["/bin/bash"]

@@ -11,12 +11,7 @@ const image = require('./controllers/image');
 
 const db = knex({
   client: 'pg',
-  connection: {
-    host : '127.0.0.1',
-    user : 'nikin',
-    password : 'nikin',
-    database : 'smart-brain'
-  }
+  connection: process.env.POSTGRES_URI
 });
 
 db.raw('select 1+1 as result').catch(err => {
